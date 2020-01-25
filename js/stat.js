@@ -49,11 +49,11 @@ var getRandomNumber = function (max) {
 };
 
 var getBarColor = function (playerName) {
-  var bgColor = 'hsl(235, ' + getRandomNumber(100) + '%, 50%)';
+  var barColor = 'hsl(235, ' + getRandomNumber(100) + '%, 50%)';
   if (playerName === 'Вы') {
-    bgColor = 'rgba(255, 0, 0, 1) ';
+    barColor = 'rgba(255, 0, 0, 1) ';
   }
-  return bgColor;
+  return barColor;
 };
 
 window.renderStatistics = function (ctx, players, times) {
@@ -70,7 +70,7 @@ window.renderStatistics = function (ctx, players, times) {
 
     ctx.fillStyle = shadowColor;
     ctx.fillText(players[i], NAME_X + GAP * i - FONT_GAP, NAME_Y);
-    ctx.fillStyle = bgColor;
+    ctx.fillStyle = barColor;
     ctx.fillRect(BAR_X + GAP * i, BAR_Y, BAR_WIDTH, height);
     ctx.fillStyle = shadowColor;
     scoreBar = Math.floor(height);
