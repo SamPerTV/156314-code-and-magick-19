@@ -5,6 +5,8 @@ var WIZARDS_NAMES = ['Иван', 'Хуан', 'Себастьян', 'Кристо
 var WIZARDS_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var WIZARDS_COATCOLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var WIZARDS_EYESCOLORS = ['black', 'red', 'blue', 'yellow', 'green'];
+var WIZARDS_FIREBALLCOLOR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+
 var WIZARD_COUNT = 4;
 var MIN_NAME_LENGTH = 2;
 var MAX_NAME_LENGTH = 25;
@@ -22,7 +24,7 @@ var similarListElement = userDialog.querySelector('.setup-similar-list');
 var setupFireball = document.querySelector('.setup-fireball-wrap');
 var setupWizardEyes = document.querySelector('.wizard-eyes');
 var setupWizardCoat = document.querySelector('.wizard-coat');
-userDialog.classList.remove('hidden');
+
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
@@ -125,7 +127,7 @@ userNameInput.addEventListener('keydown', function (evt) {
   }
 });
 setupFireball.addEventListener('click', function () {
-  setupFireball.style.fill = giveRandomElementArray(WIZARDS_EYESCOLORS);
+  setupFireball.style.background = giveRandomElementArray(WIZARDS_FIREBALLCOLOR);
 });
 setupWizardEyes.addEventListener('click', function () {
   setupWizardEyes.style.fill = giveRandomElementArray(WIZARDS_EYESCOLORS);
